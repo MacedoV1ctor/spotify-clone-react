@@ -12,7 +12,11 @@ if (!URI) {
 
 const client = new MongoClient(URI);
 
-await client.connect(); // Aguarda a conexão
+async function connectDB() {
+  await client.connect(); // Aguarda a conexão
+}
+
+connectDB();
 
 export const db = client.db("SpotifyProject");
 
